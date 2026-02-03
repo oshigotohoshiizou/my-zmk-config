@@ -1,0 +1,114 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        timeout-ms = <50>;
+
+        /* --- 基本操作 --- */
+        cb_bs      { key-positions = <0 1 2>; bindings = <&kp BSPC>; };
+        cb_del     { key-positions = <0 1 2 8>; bindings = <&kp DEL>; };
+        cb_ent     { key-positions = <3 4 5>; bindings = <&kp ENTER>; };
+        cb_spc     { key-positions = <6 7 8>; bindings = <&kp SPACE>; };
+
+        /* --- アルファベット --- */
+        cb_q { key-positions = <0 3>; bindings = <&kp Q>; };
+        cb_w { key-positions = <0 4>; bindings = <&kp W>; };
+        cb_r { key-positions = <0 1>; bindings = <&kp R>; };
+        cb_t { key-positions = <0 2>; bindings = <&kp T>; };
+        cb_y { key-positions = <1 4>; bindings = <&kp Y>; };
+        cb_p { key-positions = <1 2>; bindings = <&kp P>; };
+        cb_s { key-positions = <0 6>; bindings = <&kp S>; };
+        cb_d { key-positions = <1 3>; bindings = <&kp D>; };
+        cb_f { key-positions = <3 4>; bindings = <&kp F>; };
+        cb_g { key-positions = <1 7>; bindings = <&kp G>; };
+        cb_h { key-positions = <3 5>; bindings = <&kp H>; };
+        cb_j { key-positions = <4 5>; bindings = <&kp J>; };
+        cb_k { key-positions = <1 5>; bindings = <&kp K>; };
+        cb_l { key-positions = <2 8>; bindings = <&kp L>; };
+        cb_z { key-positions = <3 6>; bindings = <&kp Z>; };
+        cb_x { key-positions = <6 4>; bindings = <&kp X>; };
+        cb_c { key-positions = <6 7>; bindings = <&kp C>; };
+        cb_v { key-positions = <6 8>; bindings = <&kp V>; };
+        cb_b { key-positions = <4 7>; bindings = <&kp B>; };
+        cb_n { key-positions = <7 8>; bindings = <&kp N>; };
+        cb_m { key-positions = <5 8>; bindings = <&kp M>; };
+
+        /* --- 数字 --- */
+        cb_n1 { key-positions = <0 1 3 4>; bindings = <&kp N1>; };
+        cb_n2 { key-positions = <1 2 4 5>; bindings = <&kp N2>; };
+        cb_n3 { key-positions = <3 4 6 7>; bindings = <&kp N3>; };
+        cb_n4 { key-positions = <4 5 7 8>; bindings = <&kp N4>; };
+        cb_n5 { key-positions = <1 3 4 5>; bindings = <&kp N5>; };
+        cb_n6 { key-positions = <0 1 3 4 6 7>; bindings = <&kp N6>; };
+        cb_n7 { key-positions = <1 2 4 5 7 8>; bindings = <&kp N7>; };
+        cb_n8 { key-positions = <0 1 2 3 4 5>; bindings = <&kp N8>; };
+        cb_n9 { key-positions = <3 4 5 6 7 8>; bindings = <&kp N9>; };
+        cb_n0 { key-positions = <4 6 7 8>; bindings = <&kp N0>; };
+
+        /* --- 記号・特殊 --- */
+        cb_dot   { key-positions = <5 7>; bindings = <&kp DOT>; };
+        cb_comma { key-positions = <3 7>; bindings = <&kp COMMA>; };
+        cb_slsh  { key-positions = <1 8>; bindings = <&kp SLASH>; };
+        cb_semi  { key-positions = <2 5>; bindings = <&kp SEMI>; };
+        cb_col   { key-positions = <0 5>; bindings = <&kp COLON>; };
+        cb_at    { key-positions = <2 4>; bindings = <&kp AT>; };
+        cb_plus  { key-positions = <1 3 5 7>; bindings = <&kp KP_PLUS>; };
+        cb_eql   { key-positions = <3 5 6 8>; bindings = <&kp EQUAL>; };
+        cb_lpar  { key-positions = <0 1 3>; bindings = <&kp LPAR>; };
+        cb_rpar  { key-positions = <1 3 4>; bindings = <&kp RPAR>; };
+        cb_stab  { key-positions = <2 3>; bindings = <&kp LS(TAB)>; };
+        cb_esc   { key-positions = <0 1 3 4 8>; bindings = <&kp ESC>; };
+        cb_henk  { key-positions = <2 5 8>; bindings = <&kp INT4>; };
+        cb_mhen  { key-positions = <0 3 6>; bindings = <&kp INT5>; };
+        cb_undo  { key-positions = <3 8>; bindings = <&kp LC(Z)>; };
+        cb_redo  { key-positions = <5 6>; bindings = <&kp LC(Y)>; };
+
+        /* --- 修飾キー --- */
+        cb_sft { key-positions = <0 3 4>; bindings = <&sk LSHIFT>; };
+        cb_gui { key-positions = <1 4 5>; bindings = <&sk LGUI>; };
+        cb_ctl { key-positions = <3 6 7>; bindings = <&sk LCONTROL>; };
+        cb_alt { key-positions = <4 7 8>; bindings = <&sk LALT>; };
+        cb_cs  { key-positions = <0 3 4 6 7>; bindings = <&sk LS(LCTRL)>; };
+        cb_ca  { key-positions = <3 4 6 7 8>; bindings = <&sk LA(LCTRL)>; };
+        cb_sa  { key-positions = <0 3 4 7 8>; bindings = <&sk LA(LSHIFT)>; };
+
+        /* --- レイヤー切り替え (ここがエラーの源でした) --- */
+        cb_tg1 { key-positions = <1 3 5 7>; bindings = <&tog 1>; };
+        cb_sl2 { key-positions = <0 1 3 4>; bindings = <&sl 2>; };
+        cb_sl3 { key-positions = <1 2 4 5>; bindings = <&sl 3>; };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &kp E     &kp U     &kp I
+                &kp A     &kp UP    &kp O
+                &kp LEFT  &kp DOWN  &kp RIGHT
+            >;
+        };
+        tenkey_layer {
+            bindings = <
+                &kp KP_N7  &kp KP_N8  &kp KP_N9
+                &kp KP_N4  &kp KP_N5  &kp KP_N6
+                &kp KP_N1  &kp KP_N2  &kp KP_N3
+            >;
+        };
+        fn1_layer {
+            bindings = <
+                &kp F1  &kp F2  &kp F3
+                &kp F4  &kp F5  &kp F6
+                &kp F7  &kp F8  &kp F9
+            >;
+        };
+        fn2_layer {
+            bindings = <
+                &kp F10     &kp F11     &kp F12
+                &kp K_MUTE  &kp K_PP    &kp PSCRN
+                &kp INS     &kp CAPS    &kp SLCK
+            >;
+        };
+    };
+};
